@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+<div class="text-center mt-5">
+    <h1 class="text-danger display-6">Error 403: Acceso Restringido</h1>
+    
+    <p class="lead mt-3">El usuario actual no tiene los permisos necesarios para ver este reporte de inventario.</p>
+    
+    <div class="mt-4">
+        <!--<a href="{% url 'index' %}" class="btn btn-primary btn-lg">-->
+        <!--    ⬅ Volver al Menú Principal-->
+        <a href="{% url 'index' %}" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left"></i> Volver al Menú</a>
+        </a>
+    </div>
+</div>
+{% endblock %}

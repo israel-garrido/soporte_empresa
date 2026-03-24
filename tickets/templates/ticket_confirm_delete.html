@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+ 
+{% block content %} 
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm border-danger"> 
+            <div class="card-body p-4 text-center"> 
+                <i class="bi bi-exclamation-triangle display-1 text-danger mb-3 d-block"></i>
+                <h2 class="card-title h3 text-danger mb-3">Confirmar eliminación</h2> 
+                
+                <p class="lead">¿Seguro que deseas eliminar el ticket <strong>#{{ object.id }}</strong>?</p> 
+                <p class="mb-4 text-muted"><em>"{{ object.titulo }}"</em></p> 
+            
+                <form method="post"> 
+                    {% csrf_token %} 
+                    <div class="d-flex justify-content-center gap-2">
+                        <button class="btn btn-danger btn-lg" type="submit">
+                            <i class="bi bi-trash"></i> Sí, eliminar
+                        </button>
+                        <a class="btn btn-secondary btn-lg" href="{% url 'ticket_list' %}">Cancelar</a> 
+                    </div>
+                </form> 
+            </div> 
+        </div>
+    </div>
+</div>
+{% endblock %}
